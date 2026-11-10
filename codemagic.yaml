@@ -23,6 +23,7 @@ workflows:
           set -euo pipefail
           export PATH="$HOME/.bun/bin:$PATH"
           bun run test
+          export GIZO_NATIVE_BUILD=1
           bun run build
           node scripts/check-native-assets.mjs
           npx --no-install cap sync
@@ -63,6 +64,7 @@ workflows:
           set -euo pipefail
           export PATH="$HOME/.bun/bin:$PATH"
           bun run test
+          export GIZO_NATIVE_BUILD=1
           bun run build
           node scripts/check-native-assets.mjs
           npx --no-install cap sync
