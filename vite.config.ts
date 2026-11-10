@@ -71,7 +71,7 @@ const offlineBuild = {
 };
 
 export default defineConfig({
-  plugins: [...offlinePlugins, offlineBuild],
+  plugins: [...offlinePlugins, ...(isNativeBuild ? [] : [offlineBuild])],
   tanstackStart: {
     pages: [{ path: "/" }],
     prerender: { enabled: true, autoStaticPathsDiscovery: false },
