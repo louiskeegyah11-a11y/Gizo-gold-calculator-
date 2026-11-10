@@ -1,0 +1,9 @@
+- [x] Add weekly, monthly and quarterly customer Excel and picture exports with sharing and gallery saving; verify all periods, downloaded files and offline export.
+- [x] Add installation metadata, bundled fonts and offline caching.
+- [x] Verify offline calculations, saved invoice reopening and Excel export after loading the app; 60 tests pass.
+- [ ] Verify cold offline launch on installed phones and laptops after publication (published service worker required).
+- [x] Prepare Capacitor configuration and Android/iOS projects without deploying.
+- [x] Preserve browser records and add native receipt/report file sharing and printing adapters.
+- [x] Verify browser invoice saving/reopening and PNG/Excel downloads; 73 tests pass; document local builds and migration limitations.
+- [x] Prepare and validate Codemagic Android AAB and macOS iOS unsigned workflows, download artifacts and signing instructions; no publishing; 80 tests pass.
+- [ ] Run native cloud builds, then verify Android/iOS offline launch, printing, sharing and upgrade persistence (requires Codemagic access and test devices).

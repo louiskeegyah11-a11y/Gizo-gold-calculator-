@@ -1,0 +1,144 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * GIZO GOLD CALCULATOR design system.
+ * Warm cream ground, deep bronze primary, navy ink, soft gold input panel.
+ * All colors MUST use oklch format.
+ */
+
+@theme inline {
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-gold: var(--gold);
+  --color-gold-panel: var(--gold-panel);
+  --color-gold-border: var(--gold-border);
+  --color-gold-ink: var(--gold-ink);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 1rem;
+  --background: oklch(0.951 0.008 60);
+  --foreground: oklch(0.26 0.07 268);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.26 0.07 268);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.26 0.07 268);
+  --primary: oklch(0.45 0.105 60);
+  --primary-foreground: oklch(0.985 0.01 85);
+  --primary-soft: oklch(0.53 0.1 62);
+  --secondary: oklch(0.93 0.012 60);
+  --secondary-foreground: oklch(0.26 0.07 268);
+  --muted: oklch(0.93 0.012 60);
+  --muted-foreground: oklch(0.52 0.03 265);
+  --accent: oklch(0.96 0.05 92);
+  --accent-foreground: oklch(0.45 0.105 60);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.88 0.015 60);
+  --input: oklch(0.8 0.02 60);
+  --ring: oklch(0.85 0.16 92);
+  --gold: oklch(0.83 0.16 85);
+  --gold-panel: oklch(0.97 0.045 92);
+  --gold-border: oklch(0.9 0.08 92);
+  --gold-ink: oklch(0.52 0.11 75);
+  --shadow-soft: 0 12px 30px -16px color-mix(in oklab, var(--primary) 45%, transparent);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.26 0.07 268);
+  --sidebar-primary: oklch(0.45 0.105 60);
+  --sidebar-primary-foreground: oklch(0.985 0.01 85);
+  --sidebar-accent: oklch(0.93 0.012 60);
+  --sidebar-accent-foreground: oklch(0.26 0.07 268);
+  --sidebar-border: oklch(0.88 0.015 60);
+  --sidebar-ring: oklch(0.85 0.16 92);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  body {
+    background: oklch(1 0 0);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

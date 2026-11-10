@@ -1,0 +1,15 @@
+{
+  "id": "/",
+  "name": "GIZO GOLD CALCULATOR",
+  "short_name": "GIZO GOLD",
+  "description": "Gold calculator with invoices and reports, available offline after setup.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#7a4500",
+  "background_color": "#fffaf2",
+  "icons": [
+    { "src": "/icons/gizo-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/gizo-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
