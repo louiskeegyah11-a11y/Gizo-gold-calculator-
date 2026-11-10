@@ -66,6 +66,9 @@ workflows:
           bun run test
           export GIZO_NATIVE_BUILD=1
           bun run build
+          echo "=== Diagnostic: generated dist files ==="
+          if [ -d dist ]; then find dist -maxdepth 5 -type f | sort | head -200; else echo "dist directory was not created"; fi
+          echo "=== End generated dist files ==="
           node scripts/check-native-assets.mjs
           npx --no-install cap sync
           node scripts/check-native-assets.mjs --synced
